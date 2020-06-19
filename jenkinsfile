@@ -1,0 +1,29 @@
+pipeline {
+ agent any
+ stages {
+ stage('Compile') {
+ steps{
+ sh 'mvn clean compile'
+ }
+ }
+stage('CodeReview') {
+ steps{
+ sh 'mvn clean pmd:pmd'
+ }
+ }
+ stage('UnitTest') {
+ steps{
+ sh 'mvn clean test'
+ }
+ }
+ stage('CodeCoverage') {
+ steps{ sh 'mvn clean cobertura:check'
+ }
+ }
+ stage('Install') {
+ steps{
+ sh 'mvn clean install'
+}
+}
+}
+}
