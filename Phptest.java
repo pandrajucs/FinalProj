@@ -16,7 +16,7 @@ chromeOptions.addArguments("--headless");
 chromeOptions.addArguments("--no-sandbox");
 WebDriver driver = new ChromeDriver(chromeOptions);
 chromeOptions.addArguments("--headless");
-driver.get("http://34.71.60.19:8888/");
+driver.get("http://34.70.216.44:8081/");
 driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 driver.findElement(By.id("About Us")).click();
 String test = driver.findElement(By.id("PID-ab2-pg")).getText();
